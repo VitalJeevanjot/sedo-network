@@ -1,0 +1,14 @@
+{
+  "contracts": {},
+  "solidityLibs": {},
+  "proxies": {
+    "sedo-network/PaymentGateway": [
+      {
+        "address": "0x82591fB3479CDF8eA40F64166F8010ca6669ACe7",
+        "kind": "NonProxy",
+        "bytecodeHash": "12a04bb0669c4e448c84c73dd68c2fb7709e1057578344738e6a138ece3a801d"
+      }
+    ]
+  },
+  "manifestVersion": "2.2"
+}

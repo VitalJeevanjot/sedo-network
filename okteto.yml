@@ -1,0 +1,11 @@
+name: sedo-network
+image: node:12
+command:
+- bash
+remote: 22000
+workdir: /okteto
+forward:
+- 9229:9229
+- 3000:3000
+persistentVolume:
+  enabled: true

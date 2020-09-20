@@ -1,0 +1,687 @@
+{
+  "fileName": "MedianTestHelper.sol",
+  "contractName": "MedianTestHelper",
+  "source": "pragma solidity ^0.6.0;\n\nimport \"../Median.sol\";\n\ncontract MedianTestHelper {\n  function publicGet(int256[] memory list)\n    public\n    pure\n    returns (int256)\n  {\n    return Median.calculate(list);\n  }\n\n  function publicQuickselectTwo(int256[] memory list, uint256 k1, uint256 k2)\n    public\n    pure\n    returns (int256, int256)\n  {\n    return Median.quickselectTwo(list, 0, list.length - 1, k1, k2);\n  }\n}\n",
+  "sourcePath": "contracts/chainlink_contracts/chainlink/tests/MedianTestHelper.sol",
+  "sourceMap": "50:360:54:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;50:360:54;;;;;;;",
+  "deployedSourceMap": "50:360:54:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;50:360:54;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;208:200:54;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;208:200:54;;;;;;;;;;27:11:-1;14;11:28;8:2;;;52:1;49;42:12;8:2;208:200:54;;41:9:-1;34:4;18:14;14:25;11:40;8:2;;;64:1;61;54:12;8:2;208:200:54;;;;;;101:9:-1;95:2;81:12;77:21;67:8;63:36;60:51;39:11;25:12;22:29;11:108;8:2;;;132:1;129;122:12;8:2;208:200:54;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;208:200:54;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;80:124;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;80:124:54;;;;;;;;;;27:11:-1;14;11:28;8:2;;;52:1;49;42:12;8:2;80:124:54;;41:9:-1;34:4;18:14;14:25;11:40;8:2;;;64:1;61;54:12;8:2;80:124:54;;;;;;101:9:-1;95:2;81:12;77:21;67:8;63:36;60:51;39:11;25:12;22:29;11:108;8:2;;;132:1;129;122:12;8:2;80:124:54;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;80:124:54;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;208:200;317:6;325;348:55;370:4;376:1;393;379:4;:11;:15;396:2;400;348:21;:55::i;:::-;341:62;;;;208:200;;;;;;:::o;80:124::-;154:6;177:22;194:4;177:16;:22::i;:::-;170:29;;80:124;;;:::o;4881:800:17:-;5049:11;5062;5096:2;5091;:7;5083:16;;12:1:-1;9;2:12;5083:16:17;5119:2;5113;:8;;:20;;;;;5131:2;5125;:8;;5113:20;5105:29;;12:1:-1;9;2:12;5105:29:17;5154:2;5148;:8;;:20;;;;;5166:2;5160;:8;;5148:20;5140:29;;12:1:-1;9;2:12;5140:29:17;5176:501;5183:4;5176:501;;;1449:1;5206:2;5201;:7;:35;5197:103;;;5255:36;5270:4;5276:2;5280;5284;5288;5255:14;:36::i;:::-;5248:43;;;;;;5197:103;5307:16;5326:23;5336:4;5342:2;5346;5326:9;:23::i;:::-;5307:42;;5367:8;5361:2;:14;5357:314;;5392:8;5387:13;;5357:314;;;5430:2;5419:8;:13;5415:256;;;5460:1;5449:8;:12;5444:17;;5415:256;;;5499:8;5493:2;:14;;:31;;;;;5522:2;5511:8;:13;5493:31;5486:39;;;;5542:35;5554:4;5560:2;5564:8;5574:2;5542:11;:35::i;:::-;5535:42;;5594:39;5606:4;5623:1;5612:8;:12;5626:2;5630;5594:11;:39::i;:::-;5587:46;;5651:4;5657;5643:19;;;;;;;5415:256;5357:314;5176:501;;;;4881:800;;;;;;;;;:::o;554:132::-;630:6;653:28;670:10;675:4;670;:10::i;:::-;653:16;:28::i;:::-;646:35;;554:132;;;:::o;1587:2197::-;1739:11;1752;2005;2028:2;2024:1;2019:2;:6;:11;2005:25;;2036:9;2048:4;2058:1;2053:2;:6;2048:12;;;;;;;;;;;;;;2036:24;;2066:9;2082:3;2078:1;:7;:32;;170:8;2078:32;;;2088:4;2098:1;2093:2;:6;2088:12;;;;;;;;;;;;;;2078:32;2066:44;;2116:9;2132:3;2128:1;:7;:32;;170:8;2128:32;;;2138:4;2148:1;2143:2;:6;2138:12;;;;;;;;;;;;;;2128:32;2116:44;;2166:9;2182:3;2178:1;:7;:32;;170:8;2178:32;;;2188:4;2198:1;2193:2;:6;2188:12;;;;;;;;;;;;;;2178:32;2166:44;;2216:9;2232:3;2228:1;:7;:32;;170:8;2228:32;;;2238:4;2248:1;2243:2;:6;2238:12;;;;;;;;;;;;;;2228:32;2216:44;;2266:9;2282:3;2278:1;:7;:32;;170:8;2278:32;;;2288:4;2298:1;2293:2;:6;2288:12;;;;;;;;;;;;;;2278:32;2266:44;;2316:9;2332:3;2328:1;:7;:32;;170:8;2328:32;;;2338:4;2348:1;2343:2;:6;2338:12;;;;;;;;;;;;;;2328:32;2316:44;;2376:2;2371;:7;2367:35;;;2393:2;2397;2381:19;;;;;;;;2367:35;2416:2;2411;:7;2407:35;;;2433:2;2437;2421:19;;;;;;;;2407:35;2456:2;2451;:7;2447:35;;;2473:2;2477;2461:19;;;;;;;;2447:35;2496:2;2491;:7;2487:35;;;2513:2;2517;2501:19;;;;;;;;2487:35;2536:2;2531;:7;2527:35;;;2553:2;2557;2541:19;;;;;;;;2527:35;2576:2;2571;:7;2567:35;;;2593:2;2597;2581:19;;;;;;;;2567:35;2616:2;2611;:7;2607:35;;;2633:2;2637;2621:19;;;;;;;;2607:35;2656:2;2651;:7;2647:35;;;2673:2;2677;2661:19;;;;;;;;2647:35;2696:2;2691;:7;2687:35;;;2713:2;2717;2701:19;;;;;;;;2687:35;2736:2;2731;:7;2727:35;;;2753:2;2757;2741:19;;;;;;;;2727:35;2776:2;2771;:7;2767:35;;;2793:2;2797;2781:19;;;;;;;;2767:35;2816:2;2811;:7;2807:35;;;2833:2;2837;2821:19;;;;;;;;2807:35;2856:2;2851;:7;2847:35;;;2873:2;2877;2861:19;;;;;;;;2847:35;2896:2;2891;:7;2887:35;;;2913:2;2917;2901:19;;;;;;;;2887:35;2936:2;2931;:7;2927:35;;;2953:2;2957;2941:19;;;;;;;;2927:35;2976:2;2971;:7;2967:35;;;2993:2;2997;2981:19;;;;;;;;2967:35;3008:14;3030:2;3025;:7;3008:24;;3052:1;3042:6;:11;3038:302;;;3063:2;3056:9;;3038:302;;;3091:1;3081:6;:11;3077:263;;;3102:2;3095:9;;3077:263;;;3130:1;3120:6;:11;3116:224;;;3141:2;3134:9;;3116:224;;;3169:1;3159:6;:11;3155:185;;;3180:2;3173:9;;3155:185;;;3208:1;3198:6;:11;3194:146;;;3219:2;3212:9;;3194:146;;;3247:1;3237:6;:11;3233:107;;;3258:2;3251:9;;3233:107;;;3286:1;3276:6;:11;3272:68;;;3297:2;3290:9;;3272:68;;;3312:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3272:68;3233:107;3194:146;3155:185;3116:224;3077:263;3038:302;3346:14;3368:2;3363;:7;3346:24;;3386:2;3380;:8;3376:404;;;3399:4;3405;3391:19;;;;;;;;;;;;;;;;3376:404;3436:1;3426:6;:11;3422:358;;;3448:4;3454:2;3440:17;;;;;;;;;;;;;;;;3422:358;3483:1;3473:6;:11;3469:311;;;3495:4;3501:2;3487:17;;;;;;;;;;;;;;;;3469:311;3530:1;3520:6;:11;3516:264;;;3542:4;3548:2;3534:17;;;;;;;;;;;;;;;;3516:264;3577:1;3567:6;:11;3563:217;;;3589:4;3595:2;3581:17;;;;;;;;;;;;;;;;3563:217;3624:1;3614:6;:11;3610:170;;;3636:4;3642:2;3628:17;;;;;;;;;;;;;;;;3610:170;3671:1;3661:6;:11;3657:123;;;3683:4;3689:2;3675:17;;;;;;;;;;;;;;;;3657:123;3718:1;3708:6;:11;3704:76;;;3730:4;3736:2;3722:17;;;;;;;;;;;;;;;;3704:76;3752:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1587:2197;;;;;;;;;:::o;6003:1223::-;6102:7;6255:12;6270:4;6287:1;6281:2;6276;:7;6275:13;;;;;;6270:19;;;;;;;;;;;;;;6255:34;;6301:1;6295:7;;;;6357:1;6351:7;;;;6364:858;6371:4;6364:858;;;6385:55;6404:1;6398:7;;;;6433:5;6422:4;6427:2;6422:8;;;;;;;;;;;;;;:16;6385:55;;6447;6466:1;6460:7;;;;6495:5;6484:4;6489:2;6484:8;;;;;;;;;;;;;;:16;6447:55;;6518:2;6513;:7;6509:707;;;6556:4;6561:2;6556:8;;;;;;;;;;;;;;6566:4;6571:2;6566:8;;;;;;;;;;;;;;6533:4;6538:2;6533:8;;;;;;;;;;;;;6543:4;6548:2;6543:8;;;;;;;;;;;;;6532:43;;;;;;;;;;6509:707;;;7205:2;7198:9;;;;;6509:707;6364:858;;;6003:1223;;;;;;;:::o;3940:773::-;4052:10;4086:1;4080:2;:7;;4072:16;;12:1:-1;9;2:12;4072:16:17;4107:2;4102:1;:7;;4094:16;;12:1:-1;9;2:12;4094:16:17;4116:572;4128:2;4123;:7;4116:572;;;1449:1;4149:2;4144;:7;:35;4140:153;;;4191:13;4230:34;4245:4;4251:2;4255;4259:1;4262;4230:14;:34::i;:::-;4214:50;;;;;;;;4281:3;4274:10;;;;;4140:153;4300:18;4321:23;4331:4;4337:2;4341;4321:9;:23::i;:::-;4300:44;;4361:10;4356:1;:15;4352:330;;4503:10;4498:15;;4352:330;;;4672:1;4659:10;:14;4654:19;;4352:330;4116:572;;;;4700:4;4705:2;4700:8;;;;;;;;;;;;;;4693:15;;3940:773;;;;;;;:::o;7355:246::-;7424:15;7449:21;7486:4;:11;7473:25;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;7473:25:17;;;;;;;;;;;;;;;;;;;;;;;29:2:-1;21:6;17:15;125:4;109:14;101:6;88:42;156:4;148:6;144:17;134:27;;0:165;7473:25:17;;;;7449:49;;7509:9;7521:1;7509:13;;7504:75;7528:4;:11;7524:1;:15;7504:75;;;7565:4;7570:1;7565:7;;;;;;;;;;;;;;7554:5;7560:1;7554:8;;;;;;;;;;;;;:18;;;;;7541:3;;;;;;;7504:75;;;;7591:5;7584:12;;;7355:246;;;:::o;815:506::-;898:6;926:4;:11;922:1;:15;914:50;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;970:11;984:4;:11;970:25;;1001:19;1029:1;1023:3;:7;;;;;;1001:29;;1051:1;1046;1040:3;:7;;;;;;:12;1036:281;;;1062:14;1084;1127:62;1142:4;1148:1;1157;1151:3;:7;1174:1;1160:11;:15;1177:11;1127:14;:62::i;:::-;1106:83;;;;;;;;1204:36;1223:7;1232;1204:18;:36::i;:::-;1197:43;;;;;;;;1036:281;1268:42;1280:4;1286:1;1295;1289:3;:7;1298:11;1268;:42::i;:::-;1261:49;;;;815:506;;;;:::o;1828:267:23:-;1898:6;1924:1;1919:2;:6;:16;;;;;1934:1;1929:2;:6;1919:16;1918:40;;;;1946:1;1941:2;:6;:16;;;;;1956:1;1951:2;:6;1941:16;1918:40;1914:83;;;1989:1;1975:11;1979:2;1983;1975:3;:11::i;:::-;:15;;;;;;1968:22;;;;1914:83;2002:16;2041:1;2036;2031:2;:6;;;;;;2027:1;2022:2;:6;;;;;;:15;2021:21;;;;;;2002:40;;2055:35;2059:19;2068:1;2063:2;:6;;;;;;2076:1;2071:2;:6;;;;;;2059:3;:19::i;:::-;2080:9;2055:3;:35::i;:::-;2048:42;;;1828:267;;;;;:::o;1403:196::-;1459:6;1473:8;1488:1;1484;:5;1473:16;;1509:1;1504;:6;;:16;;;;;1519:1;1514;:6;;1504:16;1503:38;;;;1530:1;1526;:5;:14;;;;;1539:1;1535;:5;1526:14;1503:38;1495:84;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1593:1;1586:8;;;1403:196;;;;:::o",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "int256[]",
+          "name": "list",
+          "type": "int256[]"
+        }
+      ],
+      "name": "publicGet",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int256[]",
+          "name": "list",
+          "type": "int256[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "k1",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "k2",
+          "type": "uint256"
+        }
+      ],
+      "name": "publicQuickselectTwo",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        },
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "ast": {
+    "absolutePath": "contracts/chainlink_contracts/chainlink/tests/MedianTestHelper.sol",
+    "exportedSymbols": {
+      "MedianTestHelper": [
+        12074
+      ]
+    },
+    "id": 12075,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 12031,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:54"
+      },
+      {
+        "absolutePath": "contracts/chainlink_contracts/chainlink/Median.sol",
+        "file": "../Median.sol",
+        "id": 12032,
+        "nodeType": "ImportDirective",
+        "scope": 12075,
+        "sourceUnit": 7169,
+        "src": "25:23:54",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 12074,
+        "linearizedBaseContracts": [
+          12074
+        ],
+        "name": "MedianTestHelper",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 12045,
+              "nodeType": "Block",
+              "src": "164:40:54",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 12042,
+                        "name": "list",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12035,
+                        "src": "194:4:54",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_int256_$dyn_memory_ptr",
+                          "typeString": "int256[] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_array$_t_int256_$dyn_memory_ptr",
+                          "typeString": "int256[] memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 12040,
+                        "name": "Median",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7168,
+                        "src": "177:6:54",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Median_$7168_$",
+                          "typeString": "type(library Median)"
+                        }
+                      },
+                      "id": 12041,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "calculate",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 6271,
+                      "src": "177:16:54",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_array$_t_int256_$dyn_memory_ptr_$returns$_t_int256_$",
+                        "typeString": "function (int256[] memory) pure returns (int256)"
+                      }
+                    },
+                    "id": 12043,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "177:22:54",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "functionReturnParameters": 12039,
+                  "id": 12044,
+                  "nodeType": "Return",
+                  "src": "170:29:54"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "115efb20",
+            "id": 12046,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "publicGet",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 12036,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12035,
+                  "mutability": "mutable",
+                  "name": "list",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12046,
+                  "src": "99:20:54",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_int256_$dyn_memory_ptr",
+                    "typeString": "int256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 12033,
+                      "name": "int256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "99:6:54",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      }
+                    },
+                    "id": 12034,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "99:8:54",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_int256_$dyn_storage_ptr",
+                      "typeString": "int256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "98:22:54"
+            },
+            "returnParameters": {
+              "id": 12039,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12038,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12046,
+                  "src": "154:6:54",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 12037,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "154:6:54",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "153:8:54"
+            },
+            "scope": 12074,
+            "src": "80:124:54",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 12072,
+              "nodeType": "Block",
+              "src": "335:73:54",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 12062,
+                        "name": "list",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12049,
+                        "src": "370:4:54",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_int256_$dyn_memory_ptr",
+                          "typeString": "int256[] memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "30",
+                        "id": 12063,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "376:1:54",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 12067,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 12064,
+                            "name": "list",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 12049,
+                            "src": "379:4:54",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_array$_t_int256_$dyn_memory_ptr",
+                              "typeString": "int256[] memory"
+                            }
+                          },
+                          "id": 12065,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "length",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "379:11:54",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "-",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "31",
+                          "id": 12066,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "393:1:54",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          },
+                          "value": "1"
+                        },
+                        "src": "379:15:54",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 12068,
+                        "name": "k1",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12051,
+                        "src": "396:2:54",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 12069,
+                        "name": "k2",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12053,
+                        "src": "400:2:54",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_array$_t_int256_$dyn_memory_ptr",
+                          "typeString": "int256[] memory"
+                        },
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 12060,
+                        "name": "Median",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7168,
+                        "src": "348:6:54",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Median_$7168_$",
+                          "typeString": "type(library Median)"
+                        }
+                      },
+                      "id": 12061,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "quickselectTwo",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7039,
+                      "src": "348:21:54",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_array$_t_int256_$dyn_memory_ptr_$_t_uint256_$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_int256_$_t_int256_$",
+                        "typeString": "function (int256[] memory,uint256,uint256,uint256,uint256) pure returns (int256,int256)"
+                      }
+                    },
+                    "id": 12070,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "348:55:54",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_int256_$_t_int256_$",
+                      "typeString": "tuple(int256,int256)"
+                    }
+                  },
+                  "functionReturnParameters": 12059,
+                  "id": 12071,
+                  "nodeType": "Return",
+                  "src": "341:62:54"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "0fb75cff",
+            "id": 12073,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "publicQuickselectTwo",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 12054,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12049,
+                  "mutability": "mutable",
+                  "name": "list",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12073,
+                  "src": "238:20:54",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_int256_$dyn_memory_ptr",
+                    "typeString": "int256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 12047,
+                      "name": "int256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "238:6:54",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_int256",
+                        "typeString": "int256"
+                      }
+                    },
+                    "id": 12048,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "238:8:54",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_int256_$dyn_storage_ptr",
+                      "typeString": "int256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12051,
+                  "mutability": "mutable",
+                  "name": "k1",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12073,
+                  "src": "260:10:54",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12050,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "260:7:54",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12053,
+                  "mutability": "mutable",
+                  "name": "k2",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12073,
+                  "src": "272:10:54",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12052,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "272:7:54",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "237:46:54"
+            },
+            "returnParameters": {
+              "id": 12059,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12056,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12073,
+                  "src": "317:6:54",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 12055,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "317:6:54",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12058,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 12073,
+                  "src": "325:6:54",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 12057,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "325:6:54",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "316:16:54"
+            },
+            "scope": 12074,
+            "src": "208:200:54",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 12075,
+        "src": "50:360:54"
+      }
+    ],
+    "src": "0:411:54"
+  },
+  "bytecode": "0x608060405234801561001057600080fd5b50610d3d806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80630fb75cff1461003b578063115efb2014610122575b600080fd5b6101056004803603606081101561005157600080fd5b810190808035906020019064010000000081111561006e57600080fd5b82018360208201111561008057600080fd5b803590602001918460208302840111640100000000831117156100a257600080fd5b919080806020026020016040519081016040528093929190818152602001838360200280828437600081840152601f19601f82011690508083019250505050505050919291929080359060200190929190803590602001909291905050506101ee565b604051808381526020018281526020019250505060405180910390f35b6101d86004803603602081101561013857600080fd5b810190808035906020019064010000000081111561015557600080fd5b82018360208201111561016757600080fd5b8035906020019184602083028401116401000000008311171561018957600080fd5b919080806020026020016040519081016040528093929190818152602001838360200280828437600081840152601f19601f82011690508083019250505050505050919291929050505061020f565b6040518082815260200191505060405180910390f35b60008061020385600060018851038787610221565b91509150935093915050565b600061021a8261030e565b9050919050565b60008082841061023057600080fd5b8386111580156102405750848411155b61024957600080fd5b8286111580156102595750848311155b61026257600080fd5b5b600115610303576007868603101561028b576102828787878787610328565b91509150610304565b600061029888888861089c565b90508084116102a9578095506102fd565b848110156102bc576001810196506102fc565b8085111580156102cb57508381105b6102d157fe5b6102dd88888388610993565b92506102ee88600183018887610993565b915082829250925050610304565b5b50610263565b5b9550959350505050565b600061032161031c83610a2d565b610acc565b9050919050565b60008060008660018701039050600088600089018151811061034657fe5b60200260200101519050600082600110610380577f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff610398565b8960018a018151811061038f57fe5b60200260200101515b90506000836002106103ca577f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6103e2565b8a60028b01815181106103d957fe5b60200260200101515b9050600084600310610414577f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff61042c565b8b60038c018151811061042357fe5b60200260200101515b905060008560041061045e577f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff610476565b8c60048d018151811061046d57fe5b60200260200101515b90506000866005106104a8577f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6104c0565b8d60058e01815181106104b757fe5b60200260200101515b90506000876006106104f2577f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff61050a565b8e60068f018151811061050157fe5b60200260200101515b90508587131561051f57858780975081985050505b8385131561053257838580955081965050505b8183131561054557818380935081945050505b8487131561055857848780965081985050505b8386131561056b57838680955081975050505b8083131561057e57808380925081945050505b8486131561059157848680965081975050505b808213156105a457808280925081935050505b828713156105b757828780945081985050505b818613156105ca57818680935081975050505b808513156105dd57808580925081965050505b828613156105f057828680945081975050505b8084131561060357808480925081955050505b8285131561061657828580945081965050505b8184131561062957818480935081955050505b8284131561063c57828480945081955050505b60008e8d039050600081141561065457879a5061072e565b600181141561066557869a5061072d565b600281141561067657859a5061072c565b600381141561068757849a5061072b565b600481141561069857839a5061072a565b60058114156106a957829a50610729565b60068114156106ba57819a50610728565b6040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260108152602001807f6b31206f7574206f6620626f756e64730000000000000000000000000000000081525060200191505060405180910390fd5b5b5b5b5b5b5b60008f8d0390508c8e1415610752578b8c9b509b5050505050505050505050610892565b6000811415610770578b899b509b5050505050505050505050610892565b600181141561078e578b889b509b5050505050505050505050610892565b60028114156107ac578b879b509b5050505050505050505050610892565b60038114156107ca578b869b509b5050505050505050505050610892565b60048114156107e8578b859b509b5050505050505050505050610892565b6005811415610806578b849b509b5050505050505050505050610892565b6006811415610824578b839b509b5050505050505050505050610892565b6040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260108152602001807f6b32206f7574206f6620626f756e64730000000000000000000000000000000081525060200191505060405180910390fd5b9550959350505050565b600080846002848601816108ac57fe5b04815181106108b757fe5b602002602001015190506001840393506001830192505b60011561098a575b600184019350808585815181106108e957fe5b6020026020010151126108d6575b6001830392508085848151811061090a57fe5b6020026020010151136108f7578284101561097c5784838151811061092b57fe5b602002602001015185858151811061093f57fe5b602002602001015186868151811061095357fe5b6020026020010187868151811061096657fe5b6020026020010182815250828152505050610985565b8291505061098c565b6108ce565b505b9392505050565b6000818411156109a257600080fd5b828211156109af57600080fd5b5b82841015610a0e57600784840310156109e35760006109d28686868687610328565b809250819350505081915050610a25565b60006109f086868661089c565b9050808311610a0157809350610a08565b6001810194505b506109b0565b848481518110610a1a57fe5b602002602001015190505b949350505050565b606080825167ffffffffffffffff81118015610a4857600080fd5b50604051908082528060200260200182016040528015610a775781602001602082028036833780820191505090505b50905060008090505b8351811015610ac257838181518110610a9557fe5b6020026020010151828281518110610aa957fe5b6020026020010181815250508080600101915050610a80565b5080915050919050565b60008151600010610b45576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260168152602001807f6c697374206d757374206e6f7420626520656d7074790000000000000000000081525060200191505060405180910390fd5b600082519050600060028281610b5757fe5b049050600060028381610b6657fe5b061415610ba157600080610b84866000600187036001870387610221565b8092508193505050610b968282610bbb565b945050505050610bb6565b610bb18460006001850384610993565b925050505b919050565b60008083128015610bcc5750600082135b80610be35750600083138015610be25750600082125b5b15610c03576002610bf48484610c58565b81610bfb57fe5b059050610c52565b60006002808481610c1057fe5b0760028681610c1b57fe5b070181610c2457fe5b059050610c4e610c4860028681610c3757fe5b0560028681610c4257fe5b05610c58565b82610c58565b9150505b92915050565b600080828401905060008312158015610c715750838112155b80610c875750600083128015610c8657508381125b5b610cdc576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526021815260200180610ce76021913960400191505060405180910390fd5b809150509291505056fe5369676e6564536166654d6174683a206164646974696f6e206f766572666c6f77a2646970667358221220f3fb41915476d44c1bc1bfbde972227d15e71967f74f0ab083aeef40965a680964736f6c63430006060033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80630fb75cff1461003b578063115efb2014610122575b600080fd5b6101056004803603606081101561005157600080fd5b810190808035906020019064010000000081111561006e57600080fd5b82018360208201111561008057600080fd5b803590602001918460208302840111640100000000831117156100a257600080fd5b919080806020026020016040519081016040528093929190818152602001838360200280828437600081840152601f19601f82011690508083019250505050505050919291929080359060200190929190803590602001909291905050506101ee565b604051808381526020018281526020019250505060405180910390f35b6101d86004803603602081101561013857600080fd5b810190808035906020019064010000000081111561015557600080fd5b82018360208201111561016757600080fd5b8035906020019184602083028401116401000000008311171561018957600080fd5b919080806020026020016040519081016040528093929190818152602001838360200280828437600081840152601f19601f82011690508083019250505050505050919291929050505061020f565b6040518082815260200191505060405180910390f35b60008061020385600060018851038787610221565b91509150935093915050565b600061021a8261030e565b9050919050565b60008082841061023057600080fd5b8386111580156102405750848411155b61024957600080fd5b8286111580156102595750848311155b61026257600080fd5b5b600115610303576007868603101561028b576102828787878787610328565b91509150610304565b600061029888888861089c565b90508084116102a9578095506102fd565b848110156102bc576001810196506102fc565b8085111580156102cb57508381105b6102d157fe5b6102dd88888388610993565b92506102ee88600183018887610993565b915082829250925050610304565b5b50610263565b5b9550959350505050565b600061032161031c83610a2d565b610acc565b9050919050565b60008060008660018701039050600088600089018151811061034657fe5b60200260200101519050600082600110610380577f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff610398565b8960018a018151811061038f57fe5b60200260200101515b90506000836002106103ca577f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6103e2565b8a60028b01815181106103d957fe5b60200260200101515b9050600084600310610414577f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff61042c565b8b60038c018151811061042357fe5b60200260200101515b905060008560041061045e577f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff610476565b8c60048d018151811061046d57fe5b60200260200101515b90506000866005106104a8577f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff6104c0565b8d60058e01815181106104b757fe5b60200260200101515b90506000876006106104f2577f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff61050a565b8e60068f018151811061050157fe5b60200260200101515b90508587131561051f57858780975081985050505b8385131561053257838580955081965050505b8183131561054557818380935081945050505b8487131561055857848780965081985050505b8386131561056b57838680955081975050505b8083131561057e57808380925081945050505b8486131561059157848680965081975050505b808213156105a457808280925081935050505b828713156105b757828780945081985050505b818613156105ca57818680935081975050505b808513156105dd57808580925081965050505b828613156105f057828680945081975050505b8084131561060357808480925081955050505b8285131561061657828580945081965050505b8184131561062957818480935081955050505b8284131561063c57828480945081955050505b60008e8d039050600081141561065457879a5061072e565b600181141561066557869a5061072d565b600281141561067657859a5061072c565b600381141561068757849a5061072b565b600481141561069857839a5061072a565b60058114156106a957829a50610729565b60068114156106ba57819a50610728565b6040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260108152602001807f6b31206f7574206f6620626f756e64730000000000000000000000000000000081525060200191505060405180910390fd5b5b5b5b5b5b5b60008f8d0390508c8e1415610752578b8c9b509b5050505050505050505050610892565b6000811415610770578b899b509b5050505050505050505050610892565b600181141561078e578b889b509b5050505050505050505050610892565b60028114156107ac578b879b509b5050505050505050505050610892565b60038114156107ca578b869b509b5050505050505050505050610892565b60048114156107e8578b859b509b5050505050505050505050610892565b6005811415610806578b849b509b5050505050505050505050610892565b6006811415610824578b839b509b5050505050505050505050610892565b6040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260108152602001807f6b32206f7574206f6620626f756e64730000000000000000000000000000000081525060200191505060405180910390fd5b9550959350505050565b600080846002848601816108ac57fe5b04815181106108b757fe5b602002602001015190506001840393506001830192505b60011561098a575b600184019350808585815181106108e957fe5b6020026020010151126108d6575b6001830392508085848151811061090a57fe5b6020026020010151136108f7578284101561097c5784838151811061092b57fe5b602002602001015185858151811061093f57fe5b602002602001015186868151811061095357fe5b6020026020010187868151811061096657fe5b6020026020010182815250828152505050610985565b8291505061098c565b6108ce565b505b9392505050565b6000818411156109a257600080fd5b828211156109af57600080fd5b5b82841015610a0e57600784840310156109e35760006109d28686868687610328565b809250819350505081915050610a25565b60006109f086868661089c565b9050808311610a0157809350610a08565b6001810194505b506109b0565b848481518110610a1a57fe5b602002602001015190505b949350505050565b606080825167ffffffffffffffff81118015610a4857600080fd5b50604051908082528060200260200182016040528015610a775781602001602082028036833780820191505090505b50905060008090505b8351811015610ac257838181518110610a9557fe5b6020026020010151828281518110610aa957fe5b6020026020010181815250508080600101915050610a80565b5080915050919050565b60008151600010610b45576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260168152602001807f6c697374206d757374206e6f7420626520656d7074790000000000000000000081525060200191505060405180910390fd5b600082519050600060028281610b5757fe5b049050600060028381610b6657fe5b061415610ba157600080610b84866000600187036001870387610221565b8092508193505050610b968282610bbb565b945050505050610bb6565b610bb18460006001850384610993565b925050505b919050565b60008083128015610bcc5750600082135b80610be35750600083138015610be25750600082125b5b15610c03576002610bf48484610c58565b81610bfb57fe5b059050610c52565b60006002808481610c1057fe5b0760028681610c1b57fe5b070181610c2457fe5b059050610c4e610c4860028681610c3757fe5b0560028681610c4257fe5b05610c58565b82610c58565b9150505b92915050565b600080828401905060008312158015610c715750838112155b80610c875750600083128015610c8657508381125b5b610cdc576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526021815260200180610ce76021913960400191505060405180910390fd5b809150509291505056fe5369676e6564536166654d6174683a206164646974696f6e206f766572666c6f77a2646970667358221220f3fb41915476d44c1bc1bfbde972227d15e71967f74f0ab083aeef40965a680964736f6c63430006060033",
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.6+commit.6c089d02.Emscripten.clang",
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "evmVersion": "petersburg"
+  }
+}

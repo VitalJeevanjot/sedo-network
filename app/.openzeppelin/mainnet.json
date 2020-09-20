@@ -2,11 +2,26 @@
   "contracts": {},
   "solidityLibs": {},
   "proxies": {
-    "sedo-network/PaymentGateway": [
+    "sedo-network/PaymentGateway": [],
+    "sedo-network/Oracle": [
       {
-        "address": "0x82591fB3479CDF8eA40F64166F8010ca6669ACe7",
+        "address": "0xD317caF536FF2aa9F22449E9c4fAD8Fc1BfB2998",
         "kind": "NonProxy",
-        "bytecodeHash": "12a04bb0669c4e448c84c73dd68c2fb7709e1057578344738e6a138ece3a801d"
+        "bytecodeHash": "c0961bc20056412711423a9a4d6796e401bdfc84329198235eaaa30599749c7d"
+      }
+    ],
+    "sedo-network/Consumer": [
+      {
+        "address": "0x156C1aCe6Ed841BCF376a74b5377C1fCA7cB5176",
+        "kind": "NonProxy",
+        "bytecodeHash": "394f82bdacdba41aabb7da155c988a9fee9e1f2e6fbe5be98ebcd4708e162c5c"
+      }
+    ],
+    "sedo-network/ATestnetConsumer": [
+      {
+        "address": "0xccbD0bF91191AD3c8Df94f87c0e8A437a6B41cFD",
+        "kind": "NonProxy",
+        "bytecodeHash": "e5147177e89cd36c6fb513994954644291a8406e862724b0d52026cf3eb1bb58"
       }
     ]
   },

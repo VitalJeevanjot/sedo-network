@@ -4,6 +4,7 @@
   "description": "",
   "main": "networks.js",
   "dependencies": {
+    "@chainlink/contracts": "0.0.10",
     "@openzeppelin/contract-loader": "^0.6.1",
     "@studydefi/money-legos": "^2.3.7",
     "@truffle/hdwallet-provider": "^1.0.44",

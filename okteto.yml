@@ -7,5 +7,6 @@ workdir: /okteto
 forward:
 - 9229:9229
 - 3000:3000
+- 8545:8545
 persistentVolume:
   enabled: true

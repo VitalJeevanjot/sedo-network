@@ -14,7 +14,6 @@
       ]
     },
     "id": 23,
-    "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -268,12 +267,11 @@
   "deployedBytecode": "0x",
   "compiler": {
     "name": "solc",
-    "version": "0.6.12+commit.27d51765.Emscripten.clang",
+    "version": "0.6.6+commit.6c089d02.Emscripten.clang",
     "optimizer": {
       "enabled": false,
       "runs": 200
     },
     "evmVersion": "petersburg"
-  },
-  "networks": {}
+  }
 }

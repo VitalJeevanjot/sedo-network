@@ -26,7 +26,7 @@ contract TXTRandomness is VRFConsumerBase {
         governance = governance_interface(_governance);
     }
 
-    function getRandom(string calldata domain) external {
+    function getRandom(string memory domain) internal {
         require(
             LINK.balanceOf(address(this)) > fee,
             "Not enough LINK - fill contract with faucet"
@@ -42,6 +42,6 @@ contract TXTRandomness is VRFConsumerBase {
         string memory domain = requestIds[requestId];
         TXT_For_Domain[domain] = randomness;
 
-        client_interface(governance.client()).fulfill_random(randomness);
+        client_interface(governance.client()).fulfill_random(randomness, domain);
     }
 }

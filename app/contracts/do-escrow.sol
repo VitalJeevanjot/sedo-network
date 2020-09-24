@@ -6,35 +6,34 @@ import {governance_interface} from "./interfaces/governance_interface.sol";
 import {randomness_interface} from "./interfaces/randomness_interface.sol";
 
 contract DomainOffering is ChainlinkClient {
-    string public Domain_Name;
-    address public Current_Owner; // Also the host for txt record
-    bool public Is_Domain_Verified;
-    uint256 public TxT_Record;
+    // Require escorw agents
+    struct DomainName {
+        address Current_Self_Claimed_Owner;
+        bool Is_Domain_Verified;
+        uint256 TxT_Record;
+        bool Is_Domain_On_Sale;
+        uint256 Amount_To_Sell_For;
+        uint256 onSaleFrom;
+    }
+    mapping(string => DomainName) public entity_verified; // domain name verified by owner
+    mapping(string => DomainName) public entity_not_verified; // domain name not verified
 
-    bool public Is_Domain_On_Sale;
-
-    uint256 public Amount_To_Sell_For;
+    string api_endpoint_to_check_domain_owner;
+    string api_endpoint_to_check_domain_txt;
 
     governance_interface public governance;
 
-    modifier onlyAgent() {
-        require(msg.sender == Current_Owner);
-        _;
-    }
+    // modifier onlyAgent() {
+    //     require(msg.sender == Current_Owner);
+    //     _;
+    // }
 
-    modifier requiredAmountToBuyDomain(string memory domain_name) {
-        require(msg.value >= Amount_To_Sell_For);
-        _;
-    }
+// modifier requiredAmountToBuyDomain(string memory domain_name) {
+    //     require(msg.value >= Amount_To_Sell_For);
+    //     _;
+    // }
 
-    constructor(address _governance, string memory domain_name) public {
-        bytes memory domain_name_bytes = bytes(domain_name);
-        if (domain_name_bytes.length == 0) {
-            revert("Domain Name is required");
-        }
-        Current_Owner = msg.sender;
-        Domain_Name = domain_name;
-
+    constructor(address _governance) public {
         governance = governance_interface(_governance);
     }
 
@@ -52,27 +51,28 @@ contract DomainOffering is ChainlinkClient {
     //         amount;
     // }
 
-    function putDomainOnSale(uint256 amount)
+    function putDomain(string memory domain_name, bool onSale, uint256 amount)
         public
-        onlyAgent()
     {
-        if (amount == 0) {
+        if (onSale == true && amount == 0) {
             revert(
-                "Maybe you want to sell domain for free but atleat put 1 there."
+                "1 wei is the minimum amount you can sell for."
             );
         }
-        Amount_To_Sell_For = amount;
-        Is_Domain_On_Sale = true;
-        if (TxT_Record == 0) {
+        entity_not_verified[domain_name].Current_Self_Claimed_Owner = msg.sender;
+        entity_not_verified[domain_name].Is_Domain_On_Sale = onSale;
+        entity_not_verified[domain_name].Amount_To_Sell_For = amount;
+
+        if (entity_not_verified[domain_name].TxT_Record == 0) {
             // call verify contract
-            randomness_interface(governance.randomness()).getRandom(Domain_Name);
+            randomness_interface(governance.randomness()).getRandom(domain_name);
         }
 
         // ---
     }
-    function fullfill_random(uint256 randomness) external {
-        require(randomness > 0, "random-not-found");
-        TxT_Record = randomness;
+    function fullfill_random(uint256 randomness, string calldata domain) external {
+        require(randomness > 0, "Randomness not provided");
+        entity_not_verified[domain].TxT_Record = randomness;
     }
 
     function verifyDomain() public {}

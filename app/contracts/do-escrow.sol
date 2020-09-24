@@ -55,7 +55,6 @@ contract DomainOffering is ChainlinkClient {
     function putDomainOnSale(uint256 amount)
         public
         onlyAgent()
-        returns (bytes32 requestId)
     {
         if (amount == 0) {
             revert(
@@ -66,13 +65,14 @@ contract DomainOffering is ChainlinkClient {
         Is_Domain_On_Sale = true;
         if (TxT_Record == 0) {
             // call verify contract
-            randomness_interface(governance.randomness()).getRandom(amount);
+            randomness_interface(governance.randomness()).getRandom(Domain_Name);
         }
 
         // ---
     }
     function fullfill_random(uint256 randomness) external {
-        TxT_Record = randomness
+        require(randomness > 0, "random-not-found");
+        TxT_Record = randomness;
     }
 
     function verifyDomain() public {}

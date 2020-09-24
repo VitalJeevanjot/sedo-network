@@ -1,2 +1,4 @@
 *.txt
 db
+build
+secrets.json

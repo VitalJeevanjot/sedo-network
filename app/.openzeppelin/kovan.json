@@ -1,0 +1,26 @@
+{
+  "contracts": {},
+  "solidityLibs": {},
+  "proxies": {
+    "sedo-network/Oracle": [
+      {
+        "address": "0x87494aF55a18031C14578C70658E8eb9BF57a992",
+        "kind": "NonProxy",
+        "bytecodeHash": "c0961bc20056412711423a9a4d6796e401bdfc84329198235eaaa30599749c7d"
+      }
+    ],
+    "sedo-network/ATestnetConsumer": [
+      {
+        "address": "0x3f1e68a095A0aC8e968ab6c5D2d80401Ba08cA09",
+        "kind": "NonProxy",
+        "bytecodeHash": "e5147177e89cd36c6fb513994954644291a8406e862724b0d52026cf3eb1bb58"
+      },
+      {
+        "address": "0xE9B8a01Aecc1F32E1914678228db6a5aa6bD833d",
+        "kind": "NonProxy",
+        "bytecodeHash": "8fae3f211080349ad24159d48cb6261dfdff993a592859c9a67fbbbb7e1660ac"
+      }
+    ]
+  },
+  "manifestVersion": "2.2"
+}

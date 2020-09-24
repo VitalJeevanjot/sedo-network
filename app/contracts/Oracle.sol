@@ -1,14 +1,14 @@
-// deployed at 0xD317caF536FF2aa9F22449E9c4fAD8Fc1BfB2998
+// deployed at 0x87494aF55a18031C14578C70658E8eb9BF57a992
 
 pragma solidity 0.6.6;
 
-import "./chainlink/LinkTokenReceiver.sol";
-import "./chainlink/interfaces/ChainlinkRequestInterface.sol";
-import "./chainlink/interfaces/OracleInterface.sol";
-import "./chainlink/interfaces/LinkTokenInterface.sol";
-import "./chainlink/interfaces/WithdrawalInterface.sol";
-import "./chainlink/vendor/Ownable.sol";
-import "./chainlink/vendor/SafeMath.sol";
+import "./chainlink_contracts/chainlink/LinkTokenReceiver.sol";
+import "./chainlink_contracts/chainlink/interfaces/ChainlinkRequestInterface.sol";
+import "./chainlink_contracts/chainlink/interfaces/OracleInterface.sol";
+import "./chainlink_contracts/chainlink/interfaces/LinkTokenInterface.sol";
+import "./chainlink_contracts/chainlink/interfaces/WithdrawalInterface.sol";
+import "./chainlink_contracts/chainlink/vendor/Ownable.sol";
+import "./chainlink_contracts/chainlink/vendor/SafeMath.sol";
 
 /**
  * @title The Chainlink Oracle contract

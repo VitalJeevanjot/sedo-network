@@ -1,10 +1,12 @@
+// Deployed at 0xE9B8a01Aecc1F32E1914678228db6a5aa6bD833d
+
 pragma solidity 0.6.6;
 
 import "./chainlink_contracts/chainlink/ChainlinkClient.sol";
 import "./chainlink_contracts/chainlink/vendor/Ownable.sol";
 
 contract ATestnetConsumer is ChainlinkClient, Ownable {
-    uint256 private constant ORACLE_PAYMENT = 1 * LINK;
+    uint256 private constant ORACLE_PAYMENT = (1 * LINK) / 10;
 
     uint256 public currentPrice;
     int256 public changeDay;

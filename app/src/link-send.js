@@ -1,4 +1,7 @@
+// FOR PUBLIC NETWORK USE METAMASK.. THIS IS ONLY FOR TESTING MAINNET FORKS.
+
 const Web3 = require('web3');
+const { url, mnemonic, endpoint } = require('../secrets.json');
 
 const abi_link = require('./abi/link.json');
 const address_link = '0x514910771af9ca656af840dff83e8264ecf986ca';
@@ -11,7 +14,7 @@ const recipientAddress = "0xccbD0bF91191AD3c8Df94f87c0e8A437a6B41cFD";
 const { setupLoader } = require('@openzeppelin/contract-loader');
 
 
-const web3 = new Web3('http://localhost:8545');
+const web3 = new Web3(url);
 const loader = setupLoader({ provider: web3 }).web3;
 
 const chainlink = loader.fromArtifact('ATestnetConsumer', recipientAddress);

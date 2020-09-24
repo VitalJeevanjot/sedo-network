@@ -59,24 +59,28 @@ contract DomainOffering is ChainlinkClient {
                 "1 wei is the minimum amount you can sell for."
             );
         }
+        if (onSale == true) {
+            entity_not_verified[domain_name].onSaleFrom = now;
+        }
         entity_not_verified[domain_name].Current_Self_Claimed_Owner = msg.sender;
         entity_not_verified[domain_name].Is_Domain_On_Sale = onSale;
         entity_not_verified[domain_name].Amount_To_Sell_For = amount;
 
-        if (entity_not_verified[domain_name].TxT_Record == 0) {
-            // call verify contract
-            randomness_interface(governance.randomness()).getRandom(domain_name);
-        }
+        randomness_interface(governance.randomness()).getRandom(domain_name);
 
         // ---
     }
-    function fullfill_random(uint256 randomness, string calldata domain) external {
+    function fulfill_random(uint256 randomness, string calldata domain) external {
+        require(msg.sender == governance.randomness(), "please call this function officially.");
         require(randomness > 0, "Randomness not provided");
         entity_not_verified[domain].TxT_Record = randomness;
     }
 
     function verifyDomain() public {}
 
+    // check all fields are filled before verifying
+    // send request id number through vrf as well...
+    // emit events for verified and unverified domains
     // Change Owner... ON Change owner make domain non-verified
     // Set custom link fee...
     // Make the link token exchange online with galeto with auto conversion to specified links with paying ethereum.

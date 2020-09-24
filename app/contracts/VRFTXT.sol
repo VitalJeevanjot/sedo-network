@@ -13,6 +13,10 @@ contract TXTRandomness is VRFConsumerBase {
 
     governance_interface public governance;
 
+    string public recentDomain;
+    uint256 public recentTXT;
+    bytes32 public recentRequestId;
+
     constructor(address _governance)
         public
         VRFConsumerBase(
@@ -26,13 +30,17 @@ contract TXTRandomness is VRFConsumerBase {
         governance = governance_interface(_governance);
     }
 
-    function getRandom(string memory domain) internal {
+    function getRandom(string memory domain) public returns (bytes32 requestId) {
+        // require(msg.sender == governance.client());
         require(
             LINK.balanceOf(address(this)) > fee,
             "Not enough LINK - fill contract with faucet"
         );
+
         bytes32 _requestId = requestRandomness(keyHash, fee, now); // using block time as seed to avoid another variable...
+        recentRequestId = _requestId;
         requestIds[_requestId] = domain;
+        return _requestId;
     }
 
     function fulfillRandomness(bytes32 requestId, uint256 randomness)
@@ -40,7 +48,10 @@ contract TXTRandomness is VRFConsumerBase {
         override
     {
         string memory domain = requestIds[requestId];
+
         TXT_For_Domain[domain] = randomness;
+        recentDomain = domain;
+        recentTXT = randomness;
 
         client_interface(governance.client()).fulfill_random(randomness, domain);
     }

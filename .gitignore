@@ -2,3 +2,4 @@
 db
 build
 secrets.json
+node_modules

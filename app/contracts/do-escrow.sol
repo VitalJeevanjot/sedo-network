@@ -20,7 +20,12 @@ contract DomainOffering is ChainlinkClient {
 
     string api_endpoint_to_check_domain_owner;
     string api_endpoint_to_check_domain_txt;
+    
+    address private oracle;
+    bytes32 private jobId;
+    uint256 private fee;
 
+    uint256 public recentTXTResponse;
     governance_interface public governance;
 
     // modifier onlyAgent() {
@@ -35,6 +40,11 @@ contract DomainOffering is ChainlinkClient {
 
     constructor(address _governance) public {
         governance = governance_interface(_governance);
+        
+        setPublicChainlinkToken();
+        oracle = 0xA1eaDB935335a9d7a48d8160b4Dc372ff16b39Ac;
+        jobId = "a4013f7ddbd849cd9b90445da212b107";
+        fee = 0.1 * 10 ** 18; // 0.1 LINK
     }
 
     // function buyDomain(string memory domain_name)
@@ -65,7 +75,7 @@ contract DomainOffering is ChainlinkClient {
         entity_not_verified[domain_name].Current_Self_Claimed_Owner = msg.sender;
         entity_not_verified[domain_name].Is_Domain_On_Sale = onSale;
         entity_not_verified[domain_name].Amount_To_Sell_For = amount;
-
+        
         randomness_interface(governance.randomness()).getRandom(domain_name);
 
         // ---
@@ -76,8 +86,22 @@ contract DomainOffering is ChainlinkClient {
         entity_not_verified[domain].TxT_Record = randomness;
     }
 
-    function verifyDomain() public {}
-
+    function verifyDomain(string memory domain) public returns (bytes32 requestId)  {
+        Chainlink.Request memory request = buildChainlinkRequest(jobId, address(this), this.fulfill.selector);
+        // Set the URL to perform the GET request on
+        request.add("get", "https://api.blockin.network/auth");
+        request.add("queryParams", domain);
+        
+        // Sends the request
+        return sendChainlinkRequestTo(oracle, request, fee);
+        
+    }
+    function fulfill(bytes32 _requestId, uint256 txt_value) public recordChainlinkFulfillment(_requestId)
+    {
+        recentTXTResponse = txt_value;
+    }
+    // give suggestion that no other txt record should be present
+    // Give popup to check from api if txt value is right before making tx.
     // check all fields are filled before verifying
     // send request id number through vrf as well...
     // emit events for verified and unverified domains

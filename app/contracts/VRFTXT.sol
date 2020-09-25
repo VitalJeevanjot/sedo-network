@@ -10,9 +10,9 @@ contract TXTRandomness is VRFConsumerBase {
 
     mapping(string => uint256) public TXT_For_Domain;
     mapping(bytes32 => string) public requestIds;
-
+    mapping(uint256 => string) public Domain_For_TXT;
     governance_interface public governance;
-
+    
     string public recentDomain;
     uint256 public recentTXT;
     bytes32 public recentRequestId;
@@ -36,11 +36,15 @@ contract TXTRandomness is VRFConsumerBase {
             LINK.balanceOf(address(this)) > fee,
             "Not enough LINK - fill contract with faucet"
         );
-
+        
         bytes32 _requestId = requestRandomness(keyHash, fee, now); // using block time as seed to avoid another variable...
         recentRequestId = _requestId;
         requestIds[_requestId] = domain;
         return _requestId;
+    }
+    
+    function getDomainNameForTXT(uint256 txt) external view returns(string memory){
+        return Domain_For_TXT[txt];
     }
 
     function fulfillRandomness(bytes32 requestId, uint256 randomness)
@@ -48,8 +52,9 @@ contract TXTRandomness is VRFConsumerBase {
         override
     {
         string memory domain = requestIds[requestId];
-
+        
         TXT_For_Domain[domain] = randomness;
+        Domain_For_TXT[randomness] = domain;
         recentDomain = domain;
         recentTXT = randomness;
 

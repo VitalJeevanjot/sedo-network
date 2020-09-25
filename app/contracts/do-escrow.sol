@@ -7,7 +7,7 @@ import {randomness_interface} from "./interfaces/randomness_interface.sol";
 
 contract DomainOffering is ChainlinkClient {
     // Require escorw agents
-    struct DomainName {
+    struct DomainRecord {
         address Current_Self_Claimed_Owner;
         bool Is_Domain_Verified;
         uint256 TxT_Record;
@@ -15,8 +15,8 @@ contract DomainOffering is ChainlinkClient {
         uint256 Amount_To_Sell_For;
         uint256 onSaleFrom;
     }
-    mapping(string => DomainName) public entity_verified; // domain name verified by owner
-    mapping(string => DomainName) public entity_not_verified; // domain name not verified
+    mapping(string => DomainRecord) public entity_verified; // domain name verified by owner
+    mapping(string => DomainRecord) public entity_not_verified; // domain name not verified
 
     string api_endpoint_to_check_domain_owner;
     string api_endpoint_to_check_domain_txt;
@@ -99,6 +99,12 @@ contract DomainOffering is ChainlinkClient {
     function fulfill(bytes32 _requestId, uint256 txt_value) public recordChainlinkFulfillment(_requestId)
     {
         recentTXTResponse = txt_value;
+        string memory _domainName = randomness_interface(governance.randomness()).getDomainNameForTXT(txt_value);
+        uint256 txt_record_to_match = entity_not_verified[_domainName].TxT_Record;
+        if(txt_value == txt_record_to_match) {
+            entity_verified[_domainName] = entity_not_verified[_domainName];
+            entity_verified[_domainName].Is_Domain_Verified = true;
+        }
     }
     // give suggestion that no other txt record should be present
     // Give popup to check from api if txt value is right before making tx.

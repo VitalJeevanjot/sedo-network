@@ -46,6 +46,8 @@ contract DomainOffering is ChainlinkClient {
     
     bytes32 public recentTxTRequestId;
     bytes32 public recentWhoisRequestId;
+    
+    event Domain_Added(address curr_owner, string domain);
 
     // modifier onlyAgent() {
     //     require(msg.sender == Current_Owner);
@@ -83,7 +85,7 @@ contract DomainOffering is ChainlinkClient {
         entity[domain_name].Is_Domain_On_Sale = onSale;
         entity[domain_name].Amount_To_Sell_For = amount;
         entity[domain_name].Domain_Sold = false;
-        
+        emit Domain_Added(msg.sender, domain_name);
         randomness_interface(governance.randomness()).getRandom(domain_name);
 
         // ---

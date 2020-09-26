@@ -1,9 +1,10 @@
 // Reusable single domain smart contract...
 pragma solidity ^0.6.0;
+import "https://raw.githubusercontent.com/smartcontractkit/chainlink/develop/evm-contracts/src/v0.6/ChainlinkClient.sol";
 
-import "./chainlink_contracts/chainlink/ChainlinkClient.sol";
-import {governance_interface} from "./interfaces/governance_interface.sol";
-import {randomness_interface} from "./interfaces/randomness_interface.sol";
+
+import {governance_interface} from "https://raw.githubusercontent.com/genievot/sedo-network/master/app/contracts/interfaces/governance_interface.sol";
+import {randomness_interface} from "https://raw.githubusercontent.com/genievot/sedo-network/master/app/contracts/interfaces/randomness_interface.sol";
 
 contract DomainOffering is ChainlinkClient {
     // Require escorw agents

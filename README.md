@@ -37,7 +37,7 @@ This repository contains **Smart Contracts as Backend** and **Backend Api**
 
 `cac55ec6206f4d48a787103be5bd32f7fbb6ae0ef5a0704b33e90fc8790206c4`
 
-**Make sure your whois guard turned off and you are registered with your email at domain's registrar. 
+**Make sure your whois guard turned off and you are registered with your email at domain's registrar.** 
 
 You can see what your email says here https://emn178.github.io/online-tools/keccak_256.html
 

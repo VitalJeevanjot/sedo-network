@@ -248,4 +248,4 @@ This can also holds TXT records for domains and Domains for TXT records, If some
 ```
 
 -----
-For any further assistance, Please contact me on my discord **Genievot#6561**
+The project is incomplete and requires more features to be add on and audit before moving to production.  So it is recommended not to use it with real money or involve any real money in to this. For any further assistance, Please contact me on my discord **Genievot#6561**

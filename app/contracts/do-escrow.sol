@@ -71,7 +71,7 @@ contract DomainOffering is ChainlinkClient {
         public
     {
         require(entity[domain_name].Domain_Locked == false);
-        require(entity[domain_name].Current_Self_Claimed_Owner == address(0) || entity[domain_name].Current_Self_Claimed_Owner == msg.sender); // TODO: It will have an expiration time as well...
+        require(entity[domain_name].Current_Self_Claimed_Owner == address(0) || (entity[domain_name].Current_Self_Claimed_Owner == msg.sender && entity[domain_name].Is_Domain_Verified == true)); // TODO: It will have an expiration time as well...
         if (onSale == true && amount == 0) {
             revert(
                 "1 wei is the minimum amount you can sell for."
@@ -176,5 +176,11 @@ contract DomainOffering is ChainlinkClient {
             
         }
     }
+    
+    function reGainDomainAccess() internal {
+        // If user traded the domain last time outside chain (Make it public)
+        // This let user re create TXT record, Re verify domain and claim his own ownership
+    }
+
 }
 

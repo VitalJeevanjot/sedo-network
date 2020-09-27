@@ -58,7 +58,7 @@ Testing can be done in different ways of this repository, Either [Open zeppelin]
 
 ![](https://res.cloudinary.com/dpnrocxf9/image/upload/v1601191823/sedo-network%20testing/Screenshot_2020-09-27_125944.png)
 
-- Now we need **client** (do-escrow.sol) and **randomness**(VRFTXT.sol) to register so Deploy them...
+- Now we need **client** (do-escrow.sol) and **randomness**(VRFTXT.sol) to register so Deploy them with governance deployed contract address...
 
 ![](https://res.cloudinary.com/dpnrocxf9/image/upload/v1601192193/sedo-network%20testing/Screenshot_2020-09-27_130458.png)
 

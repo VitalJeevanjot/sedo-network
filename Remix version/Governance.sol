@@ -7,7 +7,7 @@ contract Governance {
     address public owner;
 
     constructor() public {
-        one_time = 10; // make it one later
+        one_time = 1; // make it one later
         owner = msg.sender;
     }
 

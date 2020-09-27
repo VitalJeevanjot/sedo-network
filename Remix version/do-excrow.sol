@@ -136,6 +136,8 @@ contract DomainOffering is ChainlinkClient {
     }
     function releaseFunds(string memory domain) public returns (bytes32 requestId)  {
         // here domain is `domain=<tld>`
+        require(entity[domain].Current_Self_Claimed_Owner == msg.sender);
+        require(entity[domain].Domain_Locked == true);
         Chainlink.Request memory request = buildChainlinkRequest(jobIdWhois, address(this), this.fulfillWhois.selector);
         // Set the URL to perform the GET request on
         request.add("get", "https://api.blockin.network/whois");
@@ -146,27 +148,28 @@ contract DomainOffering is ChainlinkClient {
         usersToWithdraw[_requestId] = msg.sender;
         return _requestId;
     }
-    function fulfillWhois(bytes32 _requestId, bytes32 whois_email) public recordChainlinkFulfillment(_requestId)
+    function fulfillWhois(bytes32 _requestId, bytes32 whois_email) payable public recordChainlinkFulfillment(_requestId)
     {
         // TO RUN this function required String value from chainlink adapter
         // recentWhoisResponseString = whois_email;
         string memory _domainName = requestIds[_requestId];
-        address payable user = payable(usersToWithdraw[_requestId]);
+        // address payable user = payable(usersToWithdraw[_requestId]);
         string memory email_to_match = entity[_domainName].Email_Address_Of_Buyer;
         
-        require(entity[_domainName].Domain_Locked == true);
-        require(entity[_domainName].Current_Self_Claimed_Owner == user);
+        
+        // require(entity[_domainName].Current_Self_Claimed_Owner == user);
         
         recentBuyerEmailHash = bytes32(keccak256(abi.encodePacked(email_to_match)));
         recentWhoisHash = whois_email; // it is already hashed from api...
         if(recentWhoisHash == recentBuyerEmailHash) {
-            entity[_domainName].Current_Self_Claimed_Owner.transfer(entity[_domainName].Amount_Buyer_Paid_For_It); // right now this value says no fee but can be modified later...
+            payable(entity[_domainName].Current_Self_Claimed_Owner).transfer(entity[_domainName].Amount_Buyer_Paid_For_It); // right now this value says no fee but can be modified later...
             entity[_domainName].Current_Self_Claimed_Owner = payable(entity[_domainName].Amount_Paid_By);
             entity[_domainName].Is_Domain_On_Sale = false;
             entity[_domainName].Is_Domain_Verified = false;
             entity[_domainName].Domain_Locked = false;
             entity[_domainName].Amount_To_Sell_For = 0;
             entity[_domainName].Domain_Sold = false;
+            entity[_domainName].Current_Buyer = address(0);
             
             // make buyer the owner and
             // make domain sellable again

@@ -170,4 +170,13 @@ VRF TXT Maker: [0x3e802eF1a0afdD66fDff35dCABa13cdC784C20ae](https://kovan.ethers
 https://github.com/genievot/sedo-network-graph
 
 -----
+
+## Front end serving at
+It only searches for the domains right now. If no input then it shows current user's domains otherwise you can search the domain that is if registered.
+https://www.sedo.network/#/
+
+![](https://res.cloudinary.com/dpnrocxf9/image/upload/v1601238076/sedo-network%20testing/Screenshot_2020-09-28_015006.png)
+
+
+
 The project is incomplete and requires more features to be add on and audit before moving to production.  So it is recommended not to use it with real money or involve any real money in to this. For any further assistance, Please contact me on my discord **Genievot#6561**

@@ -1,4 +1,4 @@
-# sedo-network
+![](https://res.cloudinary.com/dpnrocxf9/image/upload/v1601198241/sedo-network%20testing/sedo-network.png)
 
 > **With the power of oracles, We can finally conclude agreements between multiple parties on the blockchain from internet as a source of truth (Trusted sources / APIs) with the power of [Chainlink Tools](https://chain.link/)**
 

@@ -1,5 +1,11 @@
 ![](https://res.cloudinary.com/dpnrocxf9/image/upload/v1601198241/sedo-network%20testing/sedo-network.png)
 
+
+Sedo Network is a service that will let you sell and buy **any** domains registered anywhere through ethereum blockchain. The service plays a trusless intermediary role between seller and buyer.
+
+
+
+
 > **With the power of oracles, We can finally conclude agreements between multiple parties on the blockchain from internet as a source of truth (Trusted sources / APIs) with the power of [Chainlink Tools](https://chain.link/)**
 
 -----

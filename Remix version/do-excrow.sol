@@ -72,6 +72,7 @@ contract DomainOffering is ChainlinkClient {
         public
     {
         require(entity[domain_name].Domain_Locked == false);
+        require(entity[domain_name].Current_Self_Claimed_Owner == address(0) || entity[domain_name].Current_Self_Claimed_Owner == msg.sender); // TODO: It will have an expiration time as well...
         if (onSale == true && amount == 0) {
             revert(
                 "1 wei is the minimum amount you can sell for."

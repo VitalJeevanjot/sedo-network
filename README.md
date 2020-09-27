@@ -108,7 +108,9 @@ The value needs to be exact same as the seller wants to sell this for, call `ent
 ![](https://res.cloudinary.com/dpnrocxf9/image/upload/v1601195743/sedo-network%20testing/Screenshot_2020-09-27_140502.png)
 
 Fill the values
+
 ![](https://res.cloudinary.com/dpnrocxf9/image/upload/v1601195409/sedo-network%20testing/Screenshot_2020-09-27_135950.png)
+
 ![](https://res.cloudinary.com/dpnrocxf9/image/upload/v1601195829/sedo-network%20testing/Screenshot_2020-09-27_140627.png)
 
 Click on buy domain
@@ -118,11 +120,15 @@ Click on buy domain
 > The funds can be only released if you trasnfer your domain to the right user and if Whois scan return user email that matches the email added by buyer
 
 - Type the domain (if you are current owner (registered on chain)) and click `releaseFunds`
+
 ![](https://res.cloudinary.com/dpnrocxf9/image/upload/v1601196061/sedo-network%20testing/Screenshot_2020-09-27_141041.png)
 
 - It will do whois scan  and get the keccak256 version of registered user email address using https://api.blockin.network/whois/keybase.us change keybase.us to your tld to verify (online tool link given above)
-![]https://res.cloudinary.com/dpnrocxf9/image/upload/v1601196493/sedo-network%20testing/Screenshot_2020-09-27_141733.png
+
+![](https://res.cloudinary.com/dpnrocxf9/image/upload/v1601196493/sedo-network%20testing/Screenshot_2020-09-27_141733.png)
+
 The job will be completed by chain link node
+
 ![](https://res.cloudinary.com/dpnrocxf9/image/upload/v1601196556/sedo-network%20testing/Screenshot_2020-09-27_141900.png)
 
 - After successfull verification, It will run further states, to reset old user and add new user, transfer the money to old user etc.

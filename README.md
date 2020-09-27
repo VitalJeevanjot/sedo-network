@@ -158,9 +158,16 @@ This can also holds TXT records for domains and Domains for TXT records, If some
 ## Deployed Contracts
 
 Domain Offering and Registration: [0x819BA2e9dECf30108403C1656a66676c2857e5EA](https://kovan.etherscan.io/address/0x819BA2e9dECf30108403C1656a66676c2857e5EA#code)
+
 Governance.sol: [0xc597D514673C9843BF65A29a0a9038782A201747](https://kovan.etherscan.io/address/0xc597D514673C9843BF65A29a0a9038782A201747#code)
+
 VRF TXT Maker: [0x3e802eF1a0afdD66fDff35dCABa13cdC784C20ae](https://kovan.etherscan.io/address/0x3e802eF1a0afdD66fDff35dCABa13cdC784C20ae#code)
 
+------
+
+## Subgraph Using
+
+https://github.com/genievot/sedo-network-graph
 
 -----
 The project is incomplete and requires more features to be add on and audit before moving to production.  So it is recommended not to use it with real money or involve any real money in to this. For any further assistance, Please contact me on my discord **Genievot#6561**

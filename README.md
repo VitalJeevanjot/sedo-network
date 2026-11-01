@@ -3,7 +3,7 @@
 
 Sedo Network is a service that will let you sell and buy **any** domains registered anywhere through ethereum blockchain. The service plays a trusless intermediary role between seller and buyer.
 
-> **Status (2026):** 2020 prototype, not maintained. The contracts were deployed to Ethereum's Kovan testnet, which was retired in 2022, so the Kovan Etherscan links below no longer resolve. The walkthrough and screenshots remain the record of how it worked.
+> **Status (2026):** 2020 prototype, not maintained. The contracts were deployed to Ethereum's Kovan testnet, which was retired in 2022, so the deployed contracts listed below are no longer on a live network. The walkthrough and screenshots remain the record of how it worked.
 
 > **With the power of oracles, We can finally conclude agreements between multiple parties on the blockchain from internet as a source of truth (Trusted sources / APIs) with the power of [Chainlink Tools](https://chain.link/)**
 
